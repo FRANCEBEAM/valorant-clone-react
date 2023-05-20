@@ -2,7 +2,7 @@ import React, {useState}  from 'react'
 import { FaCaretDown, FaCaretUp, FaBars, FaTimes} from 'react-icons/fa';
 import { MdOutlineLanguage } from 'react-icons/md'
 import { Link } from 'react-router-dom';
-import { Games, Forges, Esports , Entertainments } from './gamesRequest'
+import { Games, Forges, Esports , Entertainments, Business } from './gamesRequest'
 
 function Navbar() {
     // left-navbar
@@ -128,6 +128,7 @@ function Navbar() {
                                 <div className='bg-gradient-to-r from-slate-900 card text-white flex justify-between h-[180px] grid-cols-2 my-6 rounded-lg'>
                                     <div className='m-auto'>
                                         <img className='w-[100px]' src={ent.enterTitle} alt="" />
+                                        <span className='uppercase font-ffmark font-bold'>{ent.spanTitle}</span>
                                     </div>
                                 <img className='w-[290px] right-0 rounded-lg' src={ent.enterImg} alt="" />
                                 </div>
@@ -137,19 +138,26 @@ function Navbar() {
 
 
                         {/* Business */}
-                        <div className={businessClick ? "block transition ease-out cursor-pointer" : "hidden"}>
-                            <div className=' text-black'>
-                                <div className='p-4 my-4 cursor-pointer hover:bg-gray-200 rounded-lg uppercase'>
-                                    Riot Games
-                                </div>
-                                <div className='p-4 my-4 cursor-pointer hover:bg-gray-200 uppercase'>
-                                   Riot Merch
-                                </div>
-                                <div className='p-4 my-4 cursor-pointer hover:bg-gray-200 uppercase'>
-                                   Riot Support
+                        <li className={businessClick ? "nav-item bg-black p-4 my-4 flex uppercase font-semibold tracking-widest justify-between rounded-lg text-white cursor-pointer" : "nav-item bg-gray-100 p-4 my-4 flex uppercase font-semibold tracking-widest justify-between rounded-lg cursor-pointer"} onClick={handleBusinessClick}>
+                            Business
+                            <div>
+                                {businessClick ? <FaCaretUp className="text-val-fade" size={20} /> : <FaCaretDown className="text-val-fade" size={20} />}
+                            </div>
+                        </li>
+
+                        {Business.map((buss, id)=>{
+                            return(
+                            <div className={businessClick ? "block transition ease-out" : "hidden"} key={id}>
+                                <div className='bg-gradient-to-r from-slate-900 card text-white flex justify-between h-[180px] grid-cols-2 my-6 rounded-lg'>
+                                    <div className='m-auto'>
+                                        <img className='w-[100px]' src={buss.businessTitle} alt="" />
+                                        <span className='uppercase font-ffmark font-bold'>{buss.spanTitle}</span>
+                                    </div>
+                                <img className='w-[290px] right-0 rounded-lg' src={buss.businessImg} alt="" />
                                 </div>
                             </div>
-                        </div>
+                            )
+                        })}
 
 
                         <div>
