@@ -13,7 +13,7 @@ import Home from './pages/Home';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar />,
+    element: [<Navbar />, Outlet],
     children: [
       {
         path: "/",
