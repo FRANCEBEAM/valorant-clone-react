@@ -7,13 +7,13 @@ import {
   Outlet,
 } from "react-router-dom";
 
-import Navbar from './components/Navbar'
+import Nav from './components/Nav'
 import Home from './pages/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: [<Navbar />, Outlet],
+    element: [<Nav />, Outlet],
     children: [
       {
         path: "/",
