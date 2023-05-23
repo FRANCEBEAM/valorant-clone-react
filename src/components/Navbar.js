@@ -5,6 +5,7 @@ import { IoCloseOutline } from 'react-icons/io5'
 import { MdOutlineLanguage } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import { Games, Forges, Esports , Entertainments, Business } from './gamesRequest'
+import { FiArrowUpRight } from 'react-icons/fi'
 
 function Navbar() {
     // left-navbar
@@ -220,7 +221,7 @@ function Navbar() {
                         </div>
                     </div>
 
-                    <ul className={clickbars ? 'bg-bg-valblack w-[500px] top-0 absolute right-0 z-[200px] p-4 transition-all ease-in-out duration-500' : "absolute right-[-100%] lg:flex lg:items-center lg:text-sm lg:right-[unset] lg:bg-bg-valblack lg:left-0 lg:w-full lg:gap-2 lg:pt-16 lg:px-12 lg:p-2"}>
+                    <ul className={clickbars ? 'bg-bg-valblack w-[500px] top-0 absolute right-0 z-[200px] p-4 transition-all ease-in-out duration-500' : "absolute right-[-100%] lg:flex lg:items-center lg:text-sm lg:right-[unset] lg:bg-bg-valblack lg:left-0 lg:w-full lg:gap-4 lg:pt-16 lg:px-12 lg:p-2"}>
                         <div className='py-1 flex lg:gap-6'>
                             <div className={click ? "flex cursor-pointer" : ""} onClick={handleClick}>
                             <div className='hidden lg:flex fill-white group hover:fill-val-red'>
@@ -251,14 +252,16 @@ function Navbar() {
 
                         </li>
 
-                        <li className={infoClick ? "hover:bg-gray-700 p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg text-white cursor-pointer" : "hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4 lg:relative"} onClick={handleInfoClick}>
+                        <li className={infoClick ? "hover:bg-gray-700 p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg text-white cursor-pointer" : "hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4 lg:relative lg:font-medium group game-info"} onClick={handleInfoClick}>
                             Game Info
+                            <div className='lg:group-hover:lg:bg-bg-valred lg:w-full lg:absolute lg:top-12 lg:h-1 lg:left-0'></div>
                             <div>
                                 {infoClick ? <FaCaretUp className="text-val-fade" size={20} /> : <FaCaretDown className="text-val-fade" size={20} />}
                             </div>
                         </li>
 
-                        <div className={infoClick ? "block transition ease-out" : "hidden"}>
+                        {/* fix as you come soon */}
+                        <div className={infoClick ? "block transition ease-out" : "hidden w-[200px] lg:absolute lg:top-[136px] lg:bg-bg lg:left-[240px] lg:bottom-0 lg:bg-gray-700 lg:h-full"}>
                             <div className='text-sm cursor-pointer hover:bg-gray-700 hover:text-white text-gray-400 p-4 rounded-lg'>
                                 <div className='m-auto'>
                                     <Link to='/'>
@@ -282,25 +285,59 @@ function Navbar() {
                             </div>
                         </div>
 
-                        <li className="hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4">
+                        <li className="hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4 lg:font-medium lg:relative group">
                             <Link to='/'>
                                 Media
+                                <div className='lg:group-hover:lg:bg-bg-valred lg:w-full lg:absolute lg:top-12 lg:h-1 lg:left-0'></div>
                             </Link>
                         </li>
 
-                        <li className="hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4">
+                        <li className="hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4 lg:font-medium lg:relative group">
                             <Link to='/'>
                                 News
+                                <div className='lg:group-hover:lg:bg-bg-valred lg:w-full lg:absolute lg:top-12 lg:h-1 lg:left-0'></div>
                             </Link>
                         </li>
 
-                        <li className="hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4">
+                        <li className="hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4 lg:font-medium lg:relative group">
                             <Link to='/'>
                                 Leaderboards
+                                <div className='lg:group-hover:lg:bg-bg-valred lg:w-full lg:absolute lg:top-12 lg:h-1 lg:left-0'></div>
                             </Link>
                         </li>
 
-                        <li className={clickSupport ? "hover:bg-gray-700 p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg text-white cursor-pointer" : "hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:hidden"} onClick={handleClickSupport}>
+                        <li className="hidden hover:bg-gray-700 text-white p-4 my-4 uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4 min-[1203px]:flex lg:font-medium lg:relative group">
+                            <Link to='/'>
+                                Support
+                                <div className='lg:group-hover:lg:bg-bg-valred lg:w-full lg:absolute lg:top-12 lg:h-1 lg:left-0'></div>
+                            </Link>
+                            <div>
+                                {infoClick ? <FaCaretUp className="text-val-fade" size={20} /> : <FaCaretDown className="text-val-fade" size={20} />}
+                            </div>
+                        </li>
+
+
+                        <li className="hidden hover:bg-gray-700 text-white p-4 my-4 uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:p-2 lg:px-4 min-[1391px]:flex lg:font-medium lg:relative group">
+                            <Link to='/'>
+                                Esports
+                                <div className='lg:group-hover:lg:bg-bg-valred lg:w-full lg:absolute lg:top-12 lg:h-1 lg:left-0'></div>
+                            </Link>
+                            <div>
+                                {infoClick ? <FiArrowUpRight className="text-val-fade" size={20} /> : <FiArrowUpRight className="text-val-fade" size={20} />}
+                            </div>
+                        </li>
+
+                        <li className="hidden hover:bg-gray-700 text-white p-4 my-4 uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer min-[1088px]:flex lg:p-2 lg:px-4 lg:font-medium lg:relative group">
+                            <Link to='/'>
+                                More
+                                <div className='lg:group-hover:lg:bg-bg-valred lg:w-full lg:absolute lg:top-12 lg:h-1 lg:left-0'></div>
+                            </Link>
+                            <div>
+                                {infoClick ? <FaCaretUp className="text-val-fade" size={20} /> : <FaCaretDown className="text-val-fade" size={20} />}
+                            </div>
+                        </li>
+
+                        <li className={clickSupport ? "hover:bg-gray-700 p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg text-white cursor-pointer" : "hover:bg-gray-700 text-white p-4 my-4 flex uppercase font-bold tracking-widest justify-between rounded-lg cursor-pointer lg:hidden lg:font-medium"} onClick={handleClickSupport}>
                             Support
                             <div>
                                 {clickSupport ? <FaCaretUp className="text-val-fade" size={20} /> : <FaCaretDown className="text-val-fade" size={20} />}
@@ -377,10 +414,10 @@ function Navbar() {
                         </div>
 
                         <div className="lg:absolute lg:right-0 lg:p-12 lg:flex lg:items-center lg:gap-2">
-                            <div className='bg-gray-700 p-3 rounded-[18px]'>
+                            <div className='hidden bg-gray-700 p-3 rounded-[18px] lg:block'>
                                 <IoSearchOutline className="text-white" size={26}/>
                             </div>
-                            <div>
+                            <div className='hidden lg:block'>
                                 <MdOutlineLanguage className="text-white" size={30} />
                             </div>
                             <button className="w-full font-ffmark font-bold tracking-widest bg-bg-valred uppercase p-4 rounded-xl hover:bg-bg-valred/80 lg:p-2 lg:px-4">Play Now</button>
