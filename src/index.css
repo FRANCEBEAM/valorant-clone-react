@@ -32,3 +32,9 @@
 body {
   background-color: #ece8e1;
 }
+
+@media screen and (min-width: 1024px) {
+  .grid-cols-custom {
+    grid-template-columns: 3fr 1fr;
+  }
+}
