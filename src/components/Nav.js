@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../index.css'
 import LeftNavbar from './LeftNavbar';
 import RightNavbar from './RightNavbar';
-
+import MainNav from './MainNav';
 
 
 const Nav = () => {
@@ -32,9 +32,9 @@ const Nav = () => {
     const [clickBars, setClickbars] = useState(false)
     const handleClickBars = () => setClickbars(!clickBars)
 
-    //Right-navbar game info
-    const [infoClick, setInfoClick] = useState(false);
-    const handleInfoClick = () => setInfoClick(!infoClick)
+    //right-navbar gameinfo
+    const [clickGame, setGameClick] = useState(false)
+    const handleClickGame = () => setGameClick(!clickGame)
 
     //Right-navbar support
     const [clickSupport, setSupportClick] = useState(false);
@@ -44,8 +44,11 @@ const Nav = () => {
     const [clickSocials, setSocialsClick] = useState(false)
     const handleSocialsClick = () => setSocialsClick(!clickSocials)
 
+
+
+
   return (
-    <div className='w-full fixed bg-bg-valblack p-4 py-4 flex justify-between items-center'>
+    <div className='w-full fixed bg-bg-valblack p-4 py-4 flex justify-between items-center lg:px-5'>
         <LeftNavbar riotClick={riotClick} 
                     handleRiotClick={handleRiotClick} 
                     gamesClick={gamesClick} 
@@ -60,7 +63,14 @@ const Nav = () => {
                     handleBusinessClick={handleBusinessClick}/>
 
         <RightNavbar clickBars={clickBars} 
-                     handleClickBars={handleClickBars}/>
+                     handleClickBars={handleClickBars}
+                     clickGame={clickGame} 
+                     handleClickGame={handleClickGame}
+                     clickSupport={clickSupport}
+                     handleClickSupport={handleClickSupport}
+                     clickSocials={clickSocials}
+                     handleSocialsClick={handleSocialsClick}/>
+
     </div>
   )
 }
